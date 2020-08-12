@@ -1,7 +1,6 @@
 'use strict'
 
 const path = require('path')
-  , alias = require('./config/alias')
   , loaders = require('./config/loaders')
 
 module.exports = {
@@ -9,17 +8,16 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, '..', 'public'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
 
   resolve: {
     extensions: [ '.tsx', '.ts', '.js', 'json' ],
-    alias
   },
 
   module: {
     rules: [
-      ...loaders
+      ...loaders,
     ]
   },
 }
